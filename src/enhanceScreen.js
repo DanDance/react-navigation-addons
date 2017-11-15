@@ -131,7 +131,7 @@ export default function enhanceScreen<T: *>(
     };
 
     _handleNavigationStateChange = state => {
-      const focused = state.routes[state.index] === this.props.navigation.state;
+      const focused = state.routes[state.index].key === this.props.navigation.state.key;
 
       if (this._listeners.change) {
         this._listeners.change.forEach(cb => cb(state));
